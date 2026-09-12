@@ -1,12 +1,29 @@
 import { FaStar } from "react-icons/fa";
 import type { ITechnology } from "../type";
+import { useState } from "react";
 
 interface CardType {
     card: ITechnology;
+    handleAddStack: (card: ITechnology)=> void
 }
 
-const TechCard = ({ card }: CardType) => {
+
+
+const TechCard = ({ card,  handleAddStack}: CardType) => {
+
+    const [isSelected, setIsSelected] = useState<boolean>(false)
+
+    const [button , setButton] = useState<boolean>(false);
+
+
+    const handleVisited = () =>{
+        setButton(!button)
+        handleAddStack(card);
+    }
+
     return (
+
+
         <div className="group border border-gray-200 rounded-2xl p-5 bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
 
             {/* Card Header */}
@@ -58,8 +75,16 @@ const TechCard = ({ card }: CardType) => {
             </div>
 
             {/* Button */}
-            <button className="w-full py-2.5 rounded-xl bg-black text-white text-sm font-medium hover:bg-gray-800 active:scale-[0.98] transition">
-                Add to Stack
+            <button 
+            onClick={handleVisited}
+            className={`w-full  py-2.5 rounded-xl text-sm font-medium  active:scale-[0.98] transition 
+                ${button
+                ? "bg-[#e6b4d9] text-[#d33cad] border border-[#d33cad] text-sm"
+                : "bg-black text-white text-sm hover:bg-gray-800"}`}
+                disabled={button}
+                >
+
+                {button ? "Added to Stack": "Add to Stact"}
             </button>
 
         </div>
