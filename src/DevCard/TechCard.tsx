@@ -1,24 +1,19 @@
 import { FaStar } from "react-icons/fa";
 import type { ITechnology } from "../type";
-import { useState } from "react";
 
 interface CardType {
     card: ITechnology;
     handleAddStack: (card: ITechnology)=> void
+    isAdded: boolean;
 }
 
 
 
-const TechCard = ({ card,  handleAddStack}: CardType) => {
-
-    const [isSelected, setIsSelected] = useState<boolean>(false)
-
-    const [button , setButton] = useState<boolean>(false);
-
+const TechCard = ({ card,  handleAddStack , isAdded}: CardType) => {
 
     const handleVisited = () =>{
-        setButton(!button)
         handleAddStack(card);
+
     }
 
     return (
@@ -78,13 +73,13 @@ const TechCard = ({ card,  handleAddStack}: CardType) => {
             <button 
             onClick={handleVisited}
             className={`w-full  py-2.5 rounded-xl text-sm font-medium  active:scale-[0.98] transition 
-                ${button
+                ${isAdded
                 ? "bg-[#e6b4d9] text-[#d33cad] border border-[#d33cad] text-sm"
                 : "bg-black text-white text-sm hover:bg-gray-800"}`}
-                disabled={button}
+                disabled={isAdded}
                 >
 
-                {button ? "Added to Stack": "Add to Stact"}
+                {isAdded ? "Added to Stack": "Add to Stact"}
             </button>
 
         </div>

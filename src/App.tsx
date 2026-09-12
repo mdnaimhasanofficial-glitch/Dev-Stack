@@ -4,6 +4,8 @@ import Hero from "./Components/Hero"
 import Nav from "./Components/Nav"
 import TechnologyCard from "./DevCard/TechnologyCard"
 import type { ITechnology } from "./type"
+import Footer from "./Components/Footer"
+import CopyRight from "./Components/CopyRight"
 
 const technologyPromise = async () : Promise<ITechnology[]>=>{
   const res = await fetch('/data.json')
@@ -27,6 +29,13 @@ function App() {
 
             </TechnologyCard>
         </Suspense>
+
+        <Footer></Footer>
+        <CopyRight/>
+
+
+
+        
 
     </>
   )
