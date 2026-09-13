@@ -9,7 +9,7 @@ const CardText = () => {
                 <p className="text-gray-600">Pick one technology per category to build your ideal stack.</p>
             </div>
         </div>
-        
+
     );
 };
 

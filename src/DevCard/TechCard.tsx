@@ -3,15 +3,15 @@ import type { ITechnology } from "../type";
 
 interface CardType {
     card: ITechnology;
-    handleAddStack: (card: ITechnology)=> void
+    handleAddStack: (card: ITechnology) => void
     isAdded: boolean;
 }
 
 
 
-const TechCard = ({ card,  handleAddStack , isAdded}: CardType) => {
+const TechCard = ({ card, handleAddStack, isAdded }: CardType) => {
 
-    const handleVisited = () =>{
+    const handleVisited = () => {
         handleAddStack(card);
 
     }
@@ -45,7 +45,7 @@ const TechCard = ({ card,  handleAddStack , isAdded}: CardType) => {
             </h2>
 
             {/* Description */}
-            <p className="text-sm text-gray-500 leading-6 pb-4 border-b border-gray-100 min-h-[82px]">
+            <p className="text-sm text-gray-500 leading-6 pb-4 border-b border-gray-100 min-h-20.5">
                 {card.description}
             </p>
 
@@ -70,16 +70,16 @@ const TechCard = ({ card,  handleAddStack , isAdded}: CardType) => {
             </div>
 
             {/* Button */}
-            <button 
-            onClick={handleVisited}
-            className={`w-full  py-2.5 rounded-xl text-sm font-medium  active:scale-[0.98] transition 
+            <button
+                onClick={handleVisited}
+                className={`w-full  py-2.5 rounded-xl text-sm font-medium  active:scale-[0.98] transition 
                 ${isAdded
-                ? "bg-[#e6b4d9] text-[#d33cad] border border-[#d33cad] text-sm"
-                : "bg-black text-white text-sm hover:bg-gray-800"}`}
+                        ? "bg-[#e6b4d9] text-[#d33cad] border border-[#d33cad] text-sm"
+                        : "bg-black text-white text-sm hover:bg-gray-800"}`}
                 disabled={isAdded}
-                >
+            >
 
-                {isAdded ? "Added to Stack": "Add to Stact"}
+                {isAdded ? "Added to Stack" : "Add to Stact"}
             </button>
 
         </div>

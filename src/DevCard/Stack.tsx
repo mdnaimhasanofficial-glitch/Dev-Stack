@@ -1,6 +1,7 @@
 import { GiCrossedSwords } from "react-icons/gi";
 import type { ITechnology } from "../type";
 import NoStack from "./NoStack";
+// import type { toast } from "react-toastify";
 
 interface StackProps {
     addStack: ITechnology[];
@@ -53,6 +54,7 @@ const Stack = ({
                                         <span
                                             onClick={() =>
                                                 handleRemoveStack(card.id)
+
                                             }
                                             className="text-red-500 cursor-pointer"
                                         >

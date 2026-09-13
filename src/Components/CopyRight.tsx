@@ -13,7 +13,7 @@ const CopyRight = () => {
                     <li><a href="">Terms</a></li>
                 </ul>
             </div>
-            
+
         </div>
     );
 };

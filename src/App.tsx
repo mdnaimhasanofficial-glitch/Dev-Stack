@@ -7,7 +7,7 @@ import type { ITechnology } from "./type"
 import Footer from "./Components/Footer"
 import CopyRight from "./Components/CopyRight"
 
-const technologyPromise = async () : Promise<ITechnology[]>=>{
+const technologyPromise = async (): Promise<ITechnology[]> => {
   const res = await fetch('/data.json')
   const data = await res.json();
   return data;
@@ -19,23 +19,23 @@ function App() {
 
   return (
     <>
-        <Nav/>
-        <Hero/>
-        <CardText/>
-        <Suspense fallback={<button className="btn btn-square">
-  <span className="loading loading-spinner"></span>
-</button>}>
-            <TechnologyCard technologyPromise={technologyPromise()}>
+      <Nav />
+      <Hero />
+      <CardText />
+      <Suspense fallback={<button className="btn btn-square">
+        <span className="loading loading-spinner"></span>
+      </button>}>
+        <TechnologyCard technologyPromise={technologyPromise()}>
 
-            </TechnologyCard>
-        </Suspense>
+        </TechnologyCard>
+      </Suspense>
 
-        <Footer></Footer>
-        <CopyRight/>
+      <Footer></Footer>
+      <CopyRight />
 
 
 
-        
+
 
     </>
   )
