@@ -9,7 +9,7 @@ const Nav = () => {
                 </div>
                 <div className="nav-menu">
                     <ul className='flex gap-4 mt-2 items-center text-gray-500 text-1xl'>
-                        <li className=''><a href="">Home</a></li>
+                        <li className='font-bold bg-linear-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent'><a href="">Home</a></li>
                         <li><a href="">Technologies</a></li>
                         <li><a href="">Projects</a></li>
                         <li><a href="">About</a></li>
