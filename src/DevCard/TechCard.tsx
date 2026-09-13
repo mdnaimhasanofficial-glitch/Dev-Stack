@@ -19,7 +19,13 @@ const TechCard = ({ card, handleAddStack, isAdded }: CardType) => {
     return (
 
 
-        <div className="group border border-gray-200 rounded-2xl p-5 bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <div
+            className={`group rounded-2xl p-5 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-2
+                ${isAdded
+                    ? "border-[#f158aae1]"
+                    : "border-gray-200"
+                }`}
+        >
 
             {/* Card Header */}
             <div className="flex justify-between items-start mb-5">

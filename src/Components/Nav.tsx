@@ -4,7 +4,7 @@ const Nav = () => {
     return (
         <nav className='border-b border-gray-100 bg-white'>
             <div className="container mx-auto flex items-center justify-between h-15">
-                <div className="nav-logo">
+                <div className="nav-logo ">
                     <img className='max-w-full mt-1' src={Logo} alt="" />
                 </div>
                 <div className="nav-menu">
